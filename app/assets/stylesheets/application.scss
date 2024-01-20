@@ -10,3 +10,12 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.container {
+  margin: 30px;
+}
+
+.card-img {
+  height: 100px;
+  width: 200px;
+}
