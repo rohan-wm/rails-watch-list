@@ -1,0 +1,32 @@
+/* _movie_card.scss */
+
+.movie-card {
+  width: 400px;
+  height: 500px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure overflow content is hidden */
+
+  .image-container {
+    height: 60%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .content-container {
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  .overview {
+    font-size: 1em;
+    color: #555;
+  }
+}

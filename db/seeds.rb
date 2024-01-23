@@ -5,13 +5,20 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-require 'faker'
+require 'open-uri'
+require 'json'
 
-5.times do
+url = 'https://tmdb.lewagon.com/movie/top_rated?'
+
+api_data = JSON.parse(URI.open(url).read)
+
+# Use the 'api_data' to seed your database here
+# Example:
+api_data['results'].each do |item|
   Movie.create(
-    title: Faker::Movie.title,
-    overview: Faker::Lorem.paragraph,
-    poster_url: Faker::Internet.url,
-    rating: Faker::Number.decimal(l_digits: 1, r_digits: 1)
-  )
+    title: item['title'],
+    overview: item['overview'],
+    poster_url: "https://image.tmdb.org/t/p/w500#{item['poster_path']}",
+    rating: item['vote_average']
+    )
 end
