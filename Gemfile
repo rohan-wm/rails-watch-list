@@ -81,3 +81,5 @@ gem "faker"
 gem "json"
 
 gem "open-uri"
+
+gem "cloudinary"
