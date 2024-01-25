@@ -12,8 +12,6 @@ url = 'https://tmdb.lewagon.com/movie/top_rated?'
 
 api_data = JSON.parse(URI.open(url).read)
 
-# Use the 'api_data' to seed your database here
-# Example:
 api_data['results'].each do |item|
   Movie.create(
     title: item['title'],
